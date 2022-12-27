@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="secondPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #b8968d;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafe94.DeliveryDriverScreen.DeliveryDriverMainScreenController">
+    <children>
+        <TabPane layoutX="20.0" layoutY="68.0" prefHeight="518.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="68.0">
+            <tabs>
+                <Tab text="Home Screen">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox layoutX="105.0" layoutY="37.0" prefHeight="450.0" prefWidth="600.0">
+                                    <children>
+                                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="290.0" prefWidth="600.0" text="Welcome back!">
+                                            <font>
+                                                <Font name="System Italic" size="50.0" />
+                                            </font>
+                                        </Label>
+                                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                            <children>
+                                                <Button layoutX="259.0" layoutY="85.0" mnemonicParsing="false" onAction="#logoutButtonPushed" prefHeight="44.0" prefWidth="100.0" stylesheets="@../style.css" text="Logout" textFill="#18103c">
+                                       <styleClass>
+                                          <String fx:value="shadow" />
+                                          <String fx:value="search-button" />
+                                       </styleClass>
+                                       <font>
+                                          <Font name="Comic Sans MS Bold" size="15.0" />
+                                       </font></Button>
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </VBox>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+            <Tab text="Check Orders">
+               <content>
+                  <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="431.0" prefWidth="746.0">
+                     <center>
+                        <TableView fx:id="deliveryDriverView" prefHeight="494.0" prefWidth="802.0" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn fx:id="driverIDColumn" prefWidth="93.0" text="Assigned" />
+                              <TableColumn fx:id="orderNoColumn" prefWidth="75.0" text="OrderNo" />
+                              <TableColumn fx:id="deliveryAddressColumn" prefWidth="633.0" text="Address" />
+                           </columns>
+                        </TableView>
+                     </center>
+                     <bottom>
+                        <Pane prefHeight="0.0" prefWidth="739.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button fx:id="assignButton" layoutX="31.0" layoutY="2.0" mnemonicParsing="false" onAction="#assignDelivery" prefHeight="36.0" prefWidth="78.0" text="Assign" />
+                              <Button fx:id="refreshButton" layoutX="118.0" layoutY="2.0" mnemonicParsing="false" onAction="#initialize" prefHeight="37.0" prefWidth="79.0" text="Refresh" />
+                              <Button fx:id="deliveredButton" layoutX="207.0" layoutY="2.0" mnemonicParsing="false" onAction="#deliveredOrder" prefHeight="37.0" prefWidth="78.0" text="Delivered" />
+                           </children>
+                        </Pane>
+                     </bottom>
+                  </BorderPane>
+               </content>
+            </Tab>
+            </tabs>
+        </TabPane>
+      <ImageView fx:id="deliveryDPageLogo" fitHeight="68.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/cafe944.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="304.0" layoutY="20.0" styleClass="shadow" stylesheets="@../style.css" text="Delivery Driver Portal">
+         <font>
+            <Font name="Comic Sans MS Bold" size="21.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

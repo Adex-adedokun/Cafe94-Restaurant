@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="798.0" style="-fx-background-color: #b8968d#b8968d;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafe94.CustomerScreen.CustomerCreateBookingController">
+    <children>
+        <HBox layoutX="10.0" layoutY="52.0" prefHeight="31.0" prefWidth="784.0" style="-fx-background-color: #b8968d;">
+            <children>
+                <Button mnemonicParsing="false" onAction="#homeButtonPushed" prefHeight="58.0" prefWidth="93.0" style="-fx-background-radius: 20;" text="Home" textFill="#211436">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="14.0" />
+               </font></Button>
+                <Button mnemonicParsing="false" onAction="#menuButtonPushed" prefHeight="58.0" prefWidth="110.0" style="-fx-background-radius: 20;" text="View Menu" textFill="#1a1443">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="14.0" />
+               </font></Button>
+                <Button mnemonicParsing="false" onAction="#profileButtonPushed" prefHeight="58.0" prefWidth="100.0" style="-fx-background-radius: 20;" text="Profile" textFill="#190f40">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="14.0" />
+               </font></Button>
+                <Button mnemonicParsing="false" onAction="#logoutButtonPushed" prefHeight="58.0" prefWidth="100.0" style="-fx-background-radius: 20;" text="Logout" textFill="#26134d">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="14.0" />
+               </font></Button>
+            </children>
+        </HBox>
+        <Button fx:id="bookingButton" layoutX="14.0" layoutY="459.0" mnemonicParsing="false" onAction="#createBooking" prefHeight="58.0" prefWidth="110.0" stylesheets="@../style.css" text="Book Now" textFill="#180c3c">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="search-button" />
+         </styleClass>
+         <font>
+            <Font name="Comic Sans MS Bold" size="14.0" />
+         </font></Button>
+        <Pane layoutX="14.0" layoutY="104.0" prefHeight="293.0" prefWidth="200.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="104.0">
+            <children>
+                <Text layoutX="6.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of booking" />
+                <Text layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Extend by 1 hour?" wrappingWidth="141.1923828125" />
+                <Text layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arrival Time" />
+                <Text layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of guests" />
+                <Label layoutX="7.0" layoutY="4.0" text="Make new booking" />
+            </children>
+        </Pane>
+        <Pane layoutX="136.0" layoutY="104.0" prefHeight="293.0" prefWidth="231.0" AnchorPane.topAnchor="104.0">
+            <children>
+                <DatePicker fx:id="bookingDate" layoutY="47.0" />
+                <ComboBox fx:id="bookingTime" layoutX="7.0" layoutY="108.0" prefHeight="31.0" prefWidth="186.0" />
+                <ComboBox fx:id="bookingNumberOfGuests" layoutX="8.0" layoutY="248.0" prefHeight="31.0" prefWidth="186.0" />
+                <Label fx:id="dateLabel" layoutX="8.0" layoutY="14.0" prefHeight="21.0" prefWidth="289.0" />
+                <Label fx:id="extendedLabel" layoutX="8.0" layoutY="147.0" prefHeight="21.0" prefWidth="289.0" />
+                <Label fx:id="numberLabel" layoutX="8.0" layoutY="218.0" prefHeight="21.0" prefWidth="186.0" />
+                <ComboBox fx:id="bookingExtended" layoutX="8.0" layoutY="177.0" prefHeight="31.0" prefWidth="186.0" />
+                <Label fx:id="timeLabel" layoutX="8.0" layoutY="78.0" prefHeight="21.0" prefWidth="186.0" />
+            </children>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </Pane>
+        <TableView fx:id="customerBookings" layoutX="363.0" layoutY="117.0" prefHeight="308.0" prefWidth="428.0">
+            <columns>
+                <TableColumn fx:id="dateColumn" prefWidth="94.0" text="Date" />
+                <TableColumn fx:id="timeColumn" prefWidth="68.0" text="Time" />
+                <TableColumn fx:id="guestsColumn" prefWidth="78.0" text="Guests" />
+                <TableColumn fx:id="approvedColumn" prefWidth="90.0" text="Approved" />
+                <TableColumn fx:id="bookingIDColumn" prefWidth="97.0" text="BookingID" />
+            </columns>
+        </TableView>
+        <Button layoutX="514.0" layoutY="459.0" mnemonicParsing="false" onAction="#deleteBooking" prefHeight="58.0" prefWidth="127.0" style="-fx-background-radius: 20;" text="Cancel Booking" textFill="#151340">
+         <font>
+            <Font name="Comic Sans MS Bold" size="14.0" />
+         </font></Button>
+        <Button layoutX="363.0" layoutY="459.0" mnemonicParsing="false" onAction="#showBookings" prefHeight="58.0" prefWidth="127.0" style="-fx-background-radius: 20;" text="Refresh Table" textFill="#241b51">
+         <font>
+            <Font name="Comic Sans MS Bold" size="14.0" />
+         </font></Button>
+        <Label layoutX="525.0" layoutY="80.0" prefHeight="21.0" prefWidth="119.0" text="Your bookings" textFill="#1a1040">
+         <font>
+            <Font name="Comic Sans MS Bold" size="16.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="bookingPageLogo" fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/cafe944.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="365.0" layoutY="13.0" styleClass="shadow" stylesheets="@../style.css" text="Booking Portal">
+         <font>
+            <Font name="Comic Sans MS Bold" size="18.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

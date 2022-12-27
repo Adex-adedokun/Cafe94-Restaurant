@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Cafe94">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/Cafe94.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

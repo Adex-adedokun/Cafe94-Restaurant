@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="employeePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="437.0" prefWidth="449.0" style="-fx-background-color: #b8968d;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafe94.ChefScreen.ChefChangeItemController">
+    <children>
+        <Button fx:id="changeButton" layoutX="47.0" layoutY="347.0" mnemonicParsing="false" onAction="#onPressButton" stylesheets="@../style.css" text="Change Item" textFill="#13142f">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="search-button" />
+         </styleClass>
+         <font>
+            <Font name="Comic Sans MS Bold" size="13.0" />
+         </font></Button>
+        <TextField fx:id="itemPrice" layoutX="163.0" layoutY="191.0" style="-fx-background-radius: 10;" />
+        <Label layoutX="32.0" layoutY="196.0" text="Item Price" textFill="#0d102f">
+         <font>
+            <Font name="Comic Sans MS" size="13.0" />
+         </font></Label>
+        <Button fx:id="returnButton" layoutX="246.0" layoutY="347.0" mnemonicParsing="false" onAction="#returnButtonPushed" prefHeight="27.0" prefWidth="98.0" stylesheets="@../style.css" text="Return" textFill="#13142f">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="search-button" />
+         </styleClass>
+         <font>
+            <Font name="Comic Sans MS Bold" size="13.0" />
+         </font></Button>
+        <Label fx:id="itemDescriptionEmptyError" layoutX="160.0" layoutY="101.0" prefHeight="27.0" prefWidth="269.0" text="This Field cannot be left blank." textFill="#da0f0f" visible="false" />
+        <Label fx:id="itemPriceError" layoutX="164.0" layoutY="233.0" prefHeight="27.0" prefWidth="269.0" text="This Field cannot be left blank." textFill="#da0f0f" visible="false" />
+        <Label fx:id="successLabel" layoutX="22.0" layoutY="398.0" text="has been added to the System !" textFill="#2d9718" visible="false" />
+        <TextField fx:id="itemName" layoutX="163.0" layoutY="131.0" style="-fx-background-radius: 10;" />
+        <Label layoutX="22.0" layoutY="136.0" text="New Item Name" textFill="#0d102f">
+         <font>
+            <Font name="Comic Sans MS" size="13.0" />
+         </font></Label>
+        <Label fx:id="itemNameEmptyError" layoutX="167.0" layoutY="101.0" prefHeight="27.0" prefWidth="269.0" text="This Field cannot be left blank." textFill="#da0f0f" visible="false" />
+        <Label layoutX="16.0" layoutY="252.0" text="Change Item Type?" textFill="#0d102f">
+         <font>
+            <Font name="Comic Sans MS" size="13.0" />
+         </font></Label>
+        <Label layoutX="39.0" layoutY="71.0" text="Item ID" textFill="#0d102f">
+         <font>
+            <Font name="Comic Sans MS" size="13.0" />
+         </font></Label>
+        <TextField fx:id="itemID" layoutX="163.0" layoutY="66.0" style="-fx-background-radius: 10;" />
+        <Label fx:id="itemIDEmptyError" layoutX="163.0" layoutY="14.0" prefHeight="21.0" prefWidth="187.0" />
+        <Label fx:id="validIDError" layoutX="163.0" layoutY="35.0" prefHeight="21.0" prefWidth="187.0" />
+      <TextField fx:id="itemType" layoutX="163.0" layoutY="247.0" style="-fx-background-radius: 10;" />
+    </children>
+</AnchorPane>

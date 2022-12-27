@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafe94.CustomerScreen.PersonOverviewController">
+    <children>
+      <HBox prefHeight="58.0" prefWidth="800.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#homeButtonPushed" prefHeight="58.0" prefWidth="100.0" style="-fx-background-radius: 20;" text="Home" textFill="#211751">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="16.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#bookingButtonPushed" prefHeight="58.0" prefWidth="110.0" style="-fx-background-radius: 20;" text="Make a Booking" textFill="#1b1143">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#menuButtonPushed" prefHeight="58.0" prefWidth="100.0" style="-fx-background-radius: 20;" text="View Menu" textFill="#1d1443">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#logoutButtonPushed" prefHeight="58.0" prefWidth="100.0" style="-fx-background-radius: 20;" text="Logout" textFill="#1d1346">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="14.0" />
+               </font></Button>
+         </children>
+      </HBox>
+        <SplitPane dividerPositions="0.5" layoutX="183.0" layoutY="58.0" prefHeight="542.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="58.0">
+            <items>
+            <BorderPane prefHeight="540.0" prefWidth="350.0">
+               <top>
+                  <Label prefHeight="23.0" prefWidth="128.0" text="Order History" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="16.0" />
+                     </font></Label>
+               </top>
+               <center>
+                  <TableView fx:id="orderHistoryView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn fx:id="orderNoColumn" prefWidth="56.0" text="OrderNo" />
+                      <TableColumn fx:id="itemColumn" prefWidth="125.0" text="Item" />
+                        <TableColumn fx:id="orderTypeColumn" prefWidth="89.0" text="Type" />
+                        <TableColumn fx:id="orderDateColumn" prefWidth="124.0" text="Date" />
+                    </columns>
+                  </TableView>
+               </center>
+            </BorderPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="540.0" prefWidth="498.0">
+                    <children>
+                        <GridPane layoutX="68.0" layoutY="20.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="30.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="First Name" textFill="#1d1f54" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Comic Sans MS" size="14.0" />
+                           </font></Label>
+                                <Label text="Last Name" textFill="#100f2c" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Comic Sans MS" size="14.0" />
+                           </font></Label>
+                                <Label text="Username" textFill="#291c51">
+                           <font>
+                              <Font name="Comic Sans MS" size="14.0" />
+                           </font></Label>
+                                <Label text="Customer ID" textFill="#1d1640" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Comic Sans MS" size="15.0" />
+                           </font></Label>
+                                <Label fx:id="userNameLabel" text="Label" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Comic Sans MS Bold" size="14.0" />
+                           </font></Label>
+                                <Label fx:id="firstNameLabel" text="Label" textFill="#201a57" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Comic Sans MS Bold" size="14.0" />
+                           </font></Label>
+                                <Label fx:id="lastNameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Comic Sans MS Bold" size="14.0" />
+                           </font></Label>
+                                <Label fx:id="customerIDLabel" text="Label" textFill="#1a0e39" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Comic Sans MS" size="14.0" />
+                           </font></Label>
+                            </children>
+                        </GridPane>
+                        <HBox layoutX="197.0" layoutY="236.0" spacing="10.0" />
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>
